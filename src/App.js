@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Books from './components/Books';
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
-import Categories from './components/Categories';
+import Books from './components/Books';
+import Category from './components/Category';
 import Nav from './components/Nav';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/category" element={<Category />} />
       </Routes>
     </Router>
   );

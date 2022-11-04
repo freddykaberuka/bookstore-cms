@@ -1,8 +1,8 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
-    const links = [
+  const links = [
     {
       id: 1,
       path: '/',
@@ -16,11 +16,11 @@ function Nav() {
   ];
   return (
     <div>
-        <ul>
-            {links.map((link)=><li key={link.id}><Link to={link.path}>{link.text}</Link></li>)}
-        </ul>
+      <ul>
+        {links.map((link) => <li key={link.id}><Link to={link.path}>{link.text}</Link></li>)}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;
