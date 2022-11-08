@@ -5,6 +5,7 @@
 ### Built With
 
  - React,
+ - Redux,
  - css
  - Linters
 
