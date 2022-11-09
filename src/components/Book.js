@@ -11,6 +11,7 @@ function Book({
       <button type="button">Comment</button>
       <button type="button" onClick={() => RemoveExistingBook(id)}>Remove</button>
       <button type="button">Edit</button>
+      <hr />
     </>
   );
 }
