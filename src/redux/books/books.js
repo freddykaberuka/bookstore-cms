@@ -1,6 +1,22 @@
 const ADD_BOOK = 'bookstore-cms/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore-cms/books/REMOVE_BOOK';
-const books = [];
+const books = [
+  {
+    id: 1,
+    title: 'hacking',
+    author: 'Freddy',
+  },
+  {
+    id: 2,
+    title: 'Foundamental Mathematics',
+    author: 'Danny',
+  },
+  {
+    id: 3,
+    title: 'Physics',
+    author: 'Kaberuka',
+  },
+];
 
 // action
 export const AddBook = (NewBook) => ({
