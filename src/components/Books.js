@@ -1,12 +1,16 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddBook, RemoveBook } from '../redux/books/books';
+import { AddBook, RemoveBook, GetBooks } from '../redux/books/books';
 import Book from './Book';
 import BookForm from './BookForm';
 
 const Books = () => {
   const dispatch = useDispatch();
   const StoredBook = useSelector((state) => state.BooksReducer);
+
+  useEffect(() => {
+    dispatch(GetBooks());
+  }, []);
 
   const AddNewBook = (e, NewBook) => {
     e.preventDefault();
@@ -17,20 +21,19 @@ const Books = () => {
     dispatch(RemoveBook(id));
   };
   return (
-    <div>
-      <>
-        {StoredBook.map((item) => (
-          <Book
-            title={item.title}
-            author={item.author}
-            key={item.id}
-            id={item.id}
-            RemoveExistingBook={RemoveExistingBook}
-          />
-        ))}
-        <BookForm AddNewBook={AddNewBook} />
-      </>
-    </div>
+    <>
+      {StoredBook.map((item) => (
+        <Book
+          title={item.title}
+          author={item.author}
+          category={item.category}
+          key={item.id}
+          id={item.id}
+          RemoveExistingBook={RemoveExistingBook}
+        />
+      ))}
+      <BookForm AddNewBook={AddNewBook} />
+    </>
   );
 };
 
