@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 const BookForm = ({ AddNewBook }) => {
   const [NewBook, setNewBook] = useState({ title: '', author: '', category: '' });
   return (
-    <div>
+    <div className="form-container">
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={(e) => {
         AddNewBook(e, NewBook);
@@ -15,7 +15,7 @@ const BookForm = ({ AddNewBook }) => {
         <input
           type="text"
           name="title"
-          placeholder="Title"
+          placeholder="Book Title"
           value={NewBook.title}
           required
           onChange={(e) => setNewBook({ ...NewBook, title: e.target.value })}

@@ -22,17 +22,20 @@ const Books = () => {
   };
   return (
     <>
-      {StoredBook.map((item) => (
-        <Book
-          title={item.title}
-          author={item.author}
-          category={item.category}
-          key={item.id}
-          id={item.id}
-          RemoveExistingBook={RemoveExistingBook}
-        />
-      ))}
-      <BookForm AddNewBook={AddNewBook} />
+      <div className="books-container">
+        {StoredBook.map((item) => (
+          <Book
+            title={item.title}
+            author={item.author}
+            category={item.category}
+            key={item.id}
+            id={item.id}
+            RemoveExistingBook={RemoveExistingBook}
+          />
+        ))}
+        <hr />
+        <BookForm AddNewBook={AddNewBook} />
+      </div>
     </>
   );
 };

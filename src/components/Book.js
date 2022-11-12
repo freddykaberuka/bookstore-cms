@@ -1,18 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Progress from './Progress';
 
 function Book({
   title, author, RemoveExistingBook, id, category,
 }) {
   return (
     <>
-      <h4>{category}</h4>
-      <h2>{title}</h2>
-      <h4>{author}</h4>
-      <button type="button">Comment</button>
-      <button type="button" onClick={() => RemoveExistingBook(id)}>Remove</button>
-      <button type="button">Edit</button>
-      <hr />
+      <div className="book-container">
+        <div className="book-wrap">
+          <p>{category}</p>
+          <h1>{title}</h1>
+          <p id="author">{author}</p>
+          <button type="button" id="comment">Comment</button>
+          {' '}
+          |
+          <button type="button" onClick={() => RemoveExistingBook(id)} id="remove">Remove</button>
+          {' '}
+          |
+          <button type="button" id="edit">Edit</button>
+        </div>
+        <Progress />
+      </div>
     </>
   );
 }
